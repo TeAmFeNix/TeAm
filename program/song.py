@@ -60,7 +60,7 @@ def songg(_, message):
             dur += int(float(dur_arr[i])) * secmul
             secmul *= 60
         m.edit("**✶ جاري ارسال الملف الصوتي ..**")
-        buttons = [[InlineKeyboardButton("𝗌𝗈𝗎𝗋𝖼𝖾 𝗆as", url="t.me/S_T_Dl")]]
+        buttons = [[InlineKeyboardButton("𝗌𝗈𝗎𝗋𝖼𝖾 𝗆as", url="t.me/Mus_3b2")]]
         reply_markup = InlineKeyboardMarkup(buttons)
 
         message.reply_audio(
