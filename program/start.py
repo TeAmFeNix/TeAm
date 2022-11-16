@@ -58,7 +58,7 @@ async def _human_time_duration(seconds):
 
 @Client.on_message(command(["start", f"start@MusicTxnBot"]) & filters.private & ~filters.edited)
 async def start_(client: Client, message: Message):
-        await message.reply_photo("https://telegra.ph/file/0c2b093b524a1ebc0c417.jpg", caption=f"""✯ **✯ هلا يبعد عيني .**\n
+        await message.reply_photo("https://te.legra.ph/file/fa9654c0e092f475d08fa.jpg", caption=f"""✯ **✯ هلا يبعد عيني .**\n
  **✯ في بوت تشغيل الاغاني المميز الاول في السرعة .** 
 
 ✯ **✯ اضغط على مفتاح الأوامر لرؤية الأوامر .*
@@ -155,7 +155,7 @@ async def ccx_(client: Client, message: Message):
     
 @Client.on_message(filters.command("السورس", [".", ""]) & ~filters.edited)
 async def star_(client: Client, message: Message):
-    await message.reply_photo("https://telegra.ph/file/2a570e5771e601de624bc.jpg", caption=f"""MisTiri .\n\n▹￤ لصنع مثل هذا البوت تواصل مع مطور السورس\n\n▹￤[قناة السورس](t.me/Mus_3b2)\n▹￤[تحديثات السورس](t.me/Mus_3b2)\n▹￤[مطور السورس](t.me/iPiiii)\n▹￤[مبرمج السورس](t.me/iPiiii)**""", 
+    await message.reply_photo("https://te.legra.ph/file/1d5b44ab1e2ec79875ee1.jpg", caption=f"""TeAm FeNix .\n\n▹￤ لصنع مثل هذا البوت تواصل مع مطور السورس\n\n▹￤[قناة السورس](t.me/Mus_3b2)\n▹￤[تحديثات السورس](t.me/Mus_3b2)\n▹￤[مطور السورس](t.me/iPiiii)\n▹￤[مبرمج السورس](t.me/iPiiii)**""", 
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -188,7 +188,7 @@ async def star_(client: Client, message: Message):
 
 @Client.on_message(filters.command("المطور", [".", ""]) & ~filters.edited)
 async def mtor_(client: Client, message: Message):
-    await message.reply_photo("https://telegra.ph/file/9ccbd3fca127c985023e6.jpg", caption=f"""▹￤D𝐞𝐯 N𝐞𝐦𝐚 ↬ X : اسكانور\n▹￤D𝐞𝐯 U𝐬𝐞𝐫 ↬ @iPiiii\n▹￤D𝐞𝐯 I𝐝 ↬ ( 2036507188 )\n▹￤D𝐞𝐯 B𝐢𝐨  ..! @iPiiii**""", 
+    await message.reply_photo("https://te.legra.ph/file/6f71d6ddcf24d96c0506b.jpg", caption=f"""▹￤D𝐞𝐯 N𝐞𝐦𝐚 ↬ X : فنكس\n▹￤D𝐞𝐯 U𝐬𝐞𝐫 ↬ @iPiiii\n▹￤D𝐞𝐯 I𝐝 ↬ ( 5186954055 )\n▹￤D𝐞𝐯 B𝐢𝐨  ..! @iPiiii**""", 
         reply_markup=InlineKeyboardMarkup(
             [
                 [
