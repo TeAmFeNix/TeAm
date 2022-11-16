@@ -9,7 +9,7 @@ from driver.decorators import authorized_users_only, sudo_users_only
 
 
 @Client.on_message(
-    command(["ادخلي", f"join@{BOT_USERNAME}"]) & other_filters
+    command(["", f"join@{BOT_USERNAME}"]) & other_filters
 )
 @authorized_users_only
 async def join_chat(c: Client, m: Message):
@@ -21,12 +21,12 @@ async def join_chat(c: Client, m: Message):
                 "https://t.me/+", "https://t.me/joinchat/"
             )
             await user.join_chat(invitelink)
-            return await user.send_message(chat_id, "**ابشر دخلت**")
+            return await user.send_message(chat_id, "** **")
     except UserAlreadyParticipant:
-        return await user.send_message(chat_id, "انا موجوده يا عيني")
+        return await user.send_message(chat_id, "   ")
 
     
-@Client.on_message(filters.command("لانا ادخلي", [".", ""]) & ~filters.edited)
+@Client.on_message(filters.command(" ", [".", ""]) & ~filters.edited)
 @authorized_users_only
 async def join_chatt(c: Client, m: Message):
     chat_id = m.chat.id
@@ -37,13 +37,13 @@ async def join_chatt(c: Client, m: Message):
                 "https://t.me/+", "https://t.me/joinchat/"
             )
             await user.join_chat(invitelink)
-            return await user.send_message(chat_id, "**ابشر دخلت 💕**")
+            return await user.send_message(chat_id, "**  **")
     except UserAlreadyParticipant:
-        return await user.send_message(chat_id, "انا موجوده يا عيني")
+        return await user.send_message(chat_id, "   ")
 
 
 @Client.on_message(
-    command(["اطلعي", f"userbotleave@{BOT_USERNAME}"]) & other_filters
+    command(["", f"userbotleave@{BOT_USERNAME}"]) & other_filters
 )
 @authorized_users_only
 async def leave_chat(_, m: Message):
@@ -52,15 +52,15 @@ async def leave_chat(_, m: Message):
         await user.leave_chat(chat_id)
         return await _.send_message(
             chat_id,
-            "**ابشر طلعت**",
+            "** **",
         )
     except UserNotParticipant:
         return await _.send_message(
             chat_id,
-            "**ابشر طلعت**",
+            "** **",
         )
     
-@Client.on_message(filters.command("لانا اطلعي", [".", ""]) & ~filters.edited)
+@Client.on_message(filters.command(" ", [".", ""]) & ~filters.edited)
 @authorized_users_only
 async def leave_chat(_, m: Message):
     chat_id = m.chat.id
@@ -68,12 +68,12 @@ async def leave_chat(_, m: Message):
         await user.leave_chat(chat_id)
         return await _.send_message(
             chat_id,
-            "**ابشر طلعت**",
+            "** **",
         )
     except UserNotParticipant:
         return await _.send_message(
             chat_id,
-            "**ابشر طلعت**",
+            "** **",
         )
 
 

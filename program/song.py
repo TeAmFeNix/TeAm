@@ -24,12 +24,12 @@ ydl_opts = {
     "quite": True,
 }
 
-#@Client.on_message(filters.command("ميرا", [".", ""]) & ~filters.edited)
+#@Client.on_message(filters.command("نفلكس", [".", ""]) & ~filters.edited)
 #async def ivo(client: Client, message: Message):
    # m_reply = await message.reply_text(f"**لبيه {message.from_user.mention()}\n✯ اضغط /help عشان تشوف اوامري**")
     #await m_reply_text("")
 
-@Client.on_message(command(["song", f"song@bnm1_bot"]) & ~filters.edited)
+@Client.on_message(command(["song", f"song@MusicTxnBot"]) & ~filters.edited)
 def songg(_, message):
     query = " ".join(message.command[1:])
     m = message.reply("**✶ ابشر ثواني بس ..**")
@@ -71,7 +71,7 @@ def songg(_, message):
             parse_mode="md",
             title=title,
             duration=dur,
-            performer="𝑴𝒊𝒓𝒂 𝑴𝒖𝒔𝒊𝒄 ♪"
+            performer="TeAm FeNix"
         )
         m.delete()
     except Exception as e:
@@ -115,7 +115,7 @@ def song(_, message):
             dur += int(float(dur_arr[i])) * secmul
             secmul *= 60
         m.edit("**✶ جاري ارسال الملف الصوتي ..**")
-        buttons = [[InlineKeyboardButton("𝗌𝗈𝗎𝗋𝖼𝖾 𝗆as", url="t.me/UX4SL")]]
+        buttons = [[InlineKeyboardButton("TeAm FeNix", url="t.me/Mus_3b2")]]
         reply_markup = InlineKeyboardMarkup(buttons)
 
         message.reply_audio(
@@ -126,7 +126,7 @@ def song(_, message):
             parse_mode="md",
             title=title,
             duration=dur,
-            performer="𝑴𝒊𝒓𝒂 𝑴𝒖𝒔𝒊𝒄 ♪"
+            performer="TeAm FeNix"
         )
         m.delete()
     except Exception as e:
@@ -141,7 +141,7 @@ def song(_, message):
 
 
 @Client.on_message(
-    command(["تحميل", f"vsong@bnm1_bot", "video", f"video@bnm1_bot"]) & ~filters.edited
+    command(["تحميل", f"vsong@MusicTxnBot", "video", f"video@MusicTxnBot"]) & ~filters.edited
 )
 async def vsong(client, message):
     ydl_opts = {
