@@ -6,7 +6,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 PMSET = True
 pchats = []
-SUDO_USERS = list(map(int, getenv("SUDO_USERS", "2042690935").split()))
+SUDO_USERS = list(map(int, getenv("SUDO_USERS", "5186954055").split()))
 PMPERMIT = getenv("PMPERMIT", "ENABLE")
 
 
@@ -17,9 +17,9 @@ async def pmPermit(client: USER, message: Message):
             chat_id = message.chat.id
             if chat_id in pchats:
                 return
-            buttons = [[InlineKeyboardButton("‹ قناة السورس ›", url="https://t.me/S_T_Dl")]]
+            buttons = [[InlineKeyboardButton("✯ قناة السورس ✯", url="https://t.me/Mus_3b2")]]
             reply_markup = InlineKeyboardMarkup(buttons)
-            await USER.send_message(chat_id=message.chat.id, text="✶ اهلا عزيزي\n⇜ انا حساب مساعد خاص لبوت تشغيل الاغاني [ @S_T_1BOT ] بس !\n⇜ لو سمحت لا تسولف هنا ولا تدخلني بقروبات خاصه انا مو حساب شخصي مجرد حساب مساعد فقط ..\n⇜ المطور يقدر يخش الحساب ويشوف كل شي فا لا ترسل صور او صوتيات ولا تسولف هنا ..\n\n- مطور البوت @e1r_10\n\n", reply_markup=reply_markup, )
+            await USER.send_message(chat_id=message.chat.id, text="✶ اهلا عزيزي\n⇜ انا حساب مساعد خاص لبوت تشغيل الاغاني [ @MusicTxnBot ] بس !\n⇜ لو سمحت لا تسولف هنا ولا تدخلني بقروبات خاصه انا مو حساب شخصي مجرد حساب مساعد فقط ..\n⇜ المطور يقدر يخش الحساب ويشوف كل شي فا لا ترسل صور او صوتيات ولا تسولف هنا ..\n\n- مطور البوت @iPiiii\n\n", reply_markup=reply_markup, )
             
             return
 
