@@ -38,14 +38,7 @@ async def cbstart(_, query: CallbackQuery):
                 [
                     InlineKeyboardButton(
                         "✯ قناة السورس ✯", url=f"https://t.me/Mus_3b2"
-                    ),
-                    InlineKeyboardButton(
-                        "✯ شروحات البوت ✯", url=f"https://t.me/{UPDATES_CHANNEL}"
-                    ),
-                ],
-                [
-                    InlineKeyboardButton(
-                       "✯ شراء بوت ✯", url=f"https://t.me/ipiiii"
+                    
                     )
                 ],
             ]
