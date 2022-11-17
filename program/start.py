@@ -78,7 +78,7 @@ async def start_(client: Client, message: Message):
                         InlineKeyboardButton("✯ اوامر البوت ✯", callback_data="cbcmds"),
                         InlineKeyboardButton("✯ مطور البوت ✯", url=f"https://t.me/{OWNER_NAME}"),
                     ],
-                        )
+                       [
                     ],
                 ]
             ),
