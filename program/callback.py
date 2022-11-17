@@ -1,59 +1,52 @@
-"""
-Video + Music Stream Telegram Bot
-Copyright (c) 2022-present levina=lab <https://github.com/levina-lab>
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but without any warranty; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program. If not, see <https://www.gnu.org/licenses/licenses.html>
-"""
-
-
-from driver.core import me_bot, me_user
 from driver.queues import QUEUE
-from driver.decorators import check_blacklist
-from program.utils.inline import menu_markup, stream_markup
-
 from pyrogram import Client, filters
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
 from config import (
+    ASSISTANT_NAME,
+    BOT_NAME,
     BOT_USERNAME,
     GROUP_SUPPORT,
-    OWNER_USERNAME,
+    OWNER_NAME,
+    AMR_NAME,
     UPDATES_CHANNEL,
-    SUDO_USERS,
-    OWNER_ID,
 )
 
 
-@Client.on_callback_query(filters.regex("home_start"))
-@check_blacklist()
-async def start_set(_, query: CallbackQuery):
-    await query.answer("home start")
+@Client.on_callback_query(filters.regex("cbstart"))
+async def cbstart(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""ههݪاެ حبيب [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) ❤️‍🔥\n
-اެناެ بَۅت بَمميࢪ࣪اެتَ متَعدَدةَ ݪتشغِيݪ اެݪاغاެنِي فَي اެݪمَجمَۅعاتَ 🥇.
+       f""" **↯︙هلا يبعد عيني .**\n
+▫️ ** ↯︙في بوت تشغيل الاغاني المميز الاول في السرعة .
+**
 
--› MᥲᎥꪀƚᥲᎥꪀᥱძ ხy -› [S᥆ᥙrᥴᥱ Frᥱᥱძ᥆ꪔ](http://t.me/xl444)
--› ᖇᎥgɦƚ᥉ ხy -› [Dᥱ᥎ᥱᥣ᥆ρᥱr Mᥙꪀƚᥲᤁᥱr](http://t.me/rr8r9)
-""",
+ **يمكن اضافتي الى مجموعتك واستخدام الاوامر للتشغيل ❕*
+▫️ **اضغط على الاوامر في الاسفل \nللستفسار ارسل رسالة هنا : @ipiiii.**
+**—  —  —  —  —  —  —  —  —  —**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🥇 اެضفني اެݪى مجمۅعتَك 🥇", url=f"https://t.me/{me_bot.username}?startgroup=true")
-                ],[
-                    InlineKeyboardButton("طࢪيقة اެݪتشغيݪ", callback_data="user_guide")
-                ],[
-                    InlineKeyboardButton(" اެݪاۅاެمࢪ", callback_data="command_list"),
-                    InlineKeyboardButton("🦎 اެݪمطَۅࢪ", url=f"https://t.me/{OWNER_USERNAME}")
+                    InlineKeyboardButton(
+                        "✯ اضفني الى مجموعتك ✯",
+                        url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
+                    )
+                ],
+                [InlineKeyboardButton("✯ تفعيل البوت ✯", callback_data="cbhowtouse"),
+               
+                    InlineKeyboardButton("✯ اوامر البوت ✯", callback_data="cbcmds"),
+                    InlineKeyboardButton("✯ مطور البوت ✯", url=f"https://t.me/{OWNER_NAME}"),
+                ],
+                [
+                    InlineKeyboardButton(
+                        "✯ قناة السورس ✯", url=f"https://t.me/Mus_3b2"
+                    ),
+                    InlineKeyboardButton(
+                        "✯ شروحات البوت ✯", url=f"https://t.me/{UPDATES_CHANNEL}"
+                    ),
+                ],
+                [
+                    InlineKeyboardButton(
+                       "✯ شراء بوت ✯", url=f"https://t.me/ipiiii"
+                    )
                 ],
             ]
         ),
@@ -61,119 +54,251 @@ async def start_set(_, query: CallbackQuery):
     )
 
 
-@Client.on_callback_query(filters.regex("user_guide"))
-@check_blacklist()
-async def guide_set(_, query: CallbackQuery):
-    await query.answer("user guide")
+@Client.on_callback_query(filters.regex("cbhowtouse"))
+async def cbguides(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""طريقة التشغيل ، تابع في الاسفل ↓
+        f"""~ **هذا هي طريقة تفعيل البوت **
 
-1-› أولا ، أضفني الى مجموعتك
-2-› بعد ذالك قم برفعي كمشرف واعطائي صلاحيات مثل باقي البشر.
-3-› بعد ذالك اكتب `.تحديث` بيانات البوت
-3-› اضف سيدي ومولاي @{me_user.username} في مجموعتك او اكتب `.انضم` لدعوة المساعد
-4-› [Dᥱ᥎ᥱᥣ᥆ρᥱr Mᥙꪀƚᥲᤁᥱr](http://t.me/rr8r9) اذ لم تستطيع اضافة المساعد او واجهت مشاكل تحدث مع رئيس الوزراء السيد .
+1.) **اولا, اضفني الى مجموعتك.**
+2.) **بعد ذالك, قم بترقيتي كمسؤول.**
+3.) **بعد ذالك اكتب, .تحديث لتحديث البيانات.**
+3.) **اضف @{ASSISTANT_NAME} في مجموعتك او اكتب .انضم **
+4.) **بعد اكمال كل شي قم بفتح محادثة صوتية واستمتع.**
+5.) **بعض الاحيان, ستواجه مشاكل في التشغيل ماعليك فقط سوى كتابة الامر .تحديث**
 
-""",
+ ** اذ لم ينضم حساب المساعد اكتب .اطلع , وبعد ذالك اكتب .انضم**
+
+▫️ ** اي مشكلة تواجها لاتتردد في التحدث مع المطور: @ipiiii**
+
+**—  —  —  —  —  —  —  —  —  —**""",
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton("✯ رجوع ✯", callback_data="cbstart")]]
+        ),
+    )
+
+
+@Client.on_callback_query(filters.regex("cbcmds"))
+async def cbcmds(_, query: CallbackQuery):
+    await query.edit_message_text(
+        f"""• **مرحبًا بكم في قائمة المساعدة 👋🏽 ،**
+
+**في هذه القائمة ، يمكنك فتح العديد من قوائم**
+**الأوامر المتاحة ، وفي كل قائمة أوامر يوجد**
+**أيضًا شرح موجز لكل أمر**
+**—  —  —  —  —  —  —  —  —  —**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("-› ࢪجَۅعَ", callback_data="home_start")
+                    InlineKeyboardButton("~ اوامر المشرفين ", callback_data="kka"),
+                
+                    InlineKeyboardButton("~ اوامر الاعضاء ", callback_data="kkl")
+                ],[
+                    InlineKeyboardButton("✯ رجوع ✯", callback_data="cbstart")
+                ],
+            ]
+        ),
+    )
+    
+    
+    
+@Client.on_callback_query(filters.regex("ck"))
+async def ck(_, query: CallbackQuery):
+    await query.edit_message_text(
+        f"""
+» **اضغط على الازرار أدناه لقراءة ومعرفة الأوامر الخاصة بالبوت**
+» - لتفعيل الكت ارسل /Kstart
+» - لتعطيل الكت ارسل /Kstop
+✶ Dev - @{OWNER_NAME}**""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("~ اوامر المشرفين ", callback_data="cbadmin"),
+                
+                    InlineKeyboardButton("~ اوامر الاعضاء ", callback_data="cbbasic")
+                ],[
+                    InlineKeyboardButton("✯ اخفاء القائمة ✯", callback_data="cls")
                 ],
             ]
         ),
     )
 
 
-@Client.on_callback_query(filters.regex("command_list"))
-@check_blacklist()
-async def commands_set(_, query: CallbackQuery):
-    user_id = query.from_user.id
-    await query.answer("👍🏻قائمة الاوامر")
-    await query.edit_message_text(
-        f"""- تابع الازرار في الاسفل ↓
 
-يمديك تشوف كل اوامر البوت عن طريق زر اوامر البوت""",
+
+
+@Client.on_callback_query(filters.regex("cbbasic"))
+async def cbbasic(_, query: CallbackQuery):
+
+    ###############################################################################################
+    if not query.from_user.id == query.message.reply_to_message.from_user.id:
+            return await query.answer("يا ملقوف الاوامر مو لك وخر !", show_alert=True)
+    ###############################################################################################
+
+    await query.edit_message_text(
+        f"""**✶ اوامر الاعضاء ↓
+ - - - [ اوامر التشغيل ] 
+✯•  /play + ( اسم الاغنيه او بالرد )
+✯• /vplay + ( اسم الفيديو - بالرد )
+✯• /playlist - لعرض قائمة الانتظار
+- - - [ اوامر البث المباشر ]
+✯•  /stream + ( رابط البث ) ~ صوت
+ ✯• /vstream + ( رابط البث ) ~ فيديو
+- - - [ اوامر التحميل ]
+✯• /song + ( اسم الصوت - الاغنيه )
+✯• /vsong + ( اسم الفيديو )
+✯• /search + ( اسم الاغنيه او المقطع ) ~ يعطيك روابط له 
+- - - [ اوامر المجموعة ]
+✯• /ping - لعرض سرعة البوت
+✯• /uptime - لعرض حالة البوت
+✯• /alive - لعرض قاعدة البيانات
+✶ 𝗠𝗮𝘀𝘁𝗲𝗿 - @{OWNER_NAME}**""",
         reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("-› اوامر البوت", callback_data="user_command"),
-                ],[             
-                    InlineKeyboardButton("-› ࢪجَۅعَ", callback_data="home_start")
-                ],
-            ]
+            [[InlineKeyboardButton("✯ رجوع ✯", callback_data="ck")]]
+        ),
+    )
+
+    
+@Client.on_callback_query(filters.regex("kkl"))
+async def kkl(_, query: CallbackQuery):
+    await query.edit_message_text(
+        f"""**✶ اوامر الاعضاء ↓
+ - - - [ اوامر التشغيل ] 
+✯•  /play + ( اسم الاغنيه او بالرد )
+✯• /vplay + ( اسم الفيديو - بالرد )
+✯• /playlist - لعرض قائمة الانتظار
+- - - [ اوامر البث المباشر ]
+✯•  /stream + ( رابط البث ) ~ صوت
+ ✯• /vstream + ( رابط البث ) ~ فيديو
+- - - [ اوامر التحميل ]
+✯• /song + ( اسم الصوت - الاغنيه )
+✯• /vsong + ( اسم الفيديو )
+✯• /search + ( اسم الاغنيه او المقطع ) ~ يعطيك روابط له 
+- - - [ اوامر المجموعة ]
+✯• /ping - لعرض سرعة البوت
+✯• /uptime - لعرض حالة البوت
+✯• /alive - لعرض قاعدة البيانات
+✶ 𝗠𝗮𝘀𝘁𝗲𝗿 - @{OWNER_NAME}**""",
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton("✯ رجوع ✯", callback_data="cbcmds")]]
         ),
     )
 
 
-@Client.on_callback_query(filters.regex("user_command"))
-@check_blacklist()
-async def user_set(_, query: CallbackQuery):
-    await query.answer("👍🏻اوامر التشغيل")
+@Client.on_callback_query(filters.regex("cbadmin"))
+async def cbadmin(_, query: CallbackQuery):
+    ###############################################################################################
+    if not query.from_user.id == query.message.reply_to_message.from_user.id:
+            return await query.answer("يا ملقوف الاوامر مو لك وخر !", show_alert=True)
+    ###############################################################################################
+
     await query.edit_message_text(
-        f"""- تابع الاوامر في الاسفل ↓
-
--› .شغل - بالرد على ملف صوتي او اسم أغنية
--› .اصعد - لصعود حساب المساعد في المكالمة
--› .انزل - لنزول المساعد من المكالمة
--› .تخطي - لتخطي اغنية في التشغيل
--› .كافي - لايقاف تشغيل جميع الاغاني
--› .اضبط - لضبط صوت حساب المساعد
--› .فيديو - بالرد على مقطع فيديو او اسم فيديو
--› .مباشر - لتشغيل بث مباشر من اليوتيوب
--› .الانتضار - لرؤية قائمة الانتضار التشغيل
--› .ابحثلي - لبحث عن فيديو من اليوتيوب
--› .بحث - لتحميل اغنية من اليوتيوب
--› .كتم - لكتم صوت المساعد 
--› .بنك - لإضهار بنك البوت
--› .انضم - لدعوة حساب المساعد
-
-. شكراً لقرائتك الاوامر - أتمنى لك يوماً تعيساً 🦴 """,
+        f"""**✶ اوامر المشرفين ↓
+- - - [ اوامر التحكم بالمكالمة ]
+✯ /skip - للتخطي 
+✯ /end - لايقاف التشغيل
+✯ /pause - لايقاف مؤقت
+✯ /resume - لاكمال التشغيل
+✯ /mute - لكتم الصوت 
+✯ /unmute - لرفع الكتم
+✯ /vmute - لكتم الفيديو 
+✯ /vunmute - لالغاء كتم الفيديو
+- - - [اوامر البوت + الحساب المساعد ]
+✯ /reload - لتحديث البوت 
+✯ {AMR_NAME} ادخلي - لدعوة الحساب المساعد للمجموعة
+✯ {AMR_NAME} اطلعي - لطرد الحساب المساعد من المجموعة
+✶ 𝗠𝗮𝘀𝘁𝗲𝗿 - @{OWNER_NAME}**""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("-› ࢪجَۅعَ", callback_data="command_list")]]
+            [[InlineKeyboardButton("✯ رجوع ✯", callback_data="ck")]]
+        ),
+    )
+    
+    
+@Client.on_callback_query(filters.regex("kka"))
+async def kka(_, query: CallbackQuery):
+    await query.edit_message_text(
+        f"""**✶ اوامر المشرفين ↓
+- - - [ اوامر التحكم بالمكالمة ]
+✯ /skip - للتخطي 
+✯ /stop - لايقاف التشغيل
+✯ /pause - لايقاف مؤقت
+✯ /resume - لاكمال التشغيل
+✯ /mute - لكتم الصوت 
+✯ /unmute - لرفع الكتم
+✯ /vmute - لكتم الفيديو 
+✯ /vunmute - لالغاء كتم الفيديو
+- - - [اوامر البوت + الحساب المساعد ]
+✯ /reload - لتحديث البوت 
+   {AMR_NAME} ادخلي  - لدعوة الحساب المساعد للمجموعة
+✯ {AMR_NAME} اطلعي  - لطرد الحساب المساعد من المجموعة
+✶ 𝗠𝗮𝘀𝘁𝗲𝗿 - @{OWNER_NAME}**""",
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton("✯ رجوع ✯", callback_data="cbcmds")]]
+        ),
+    )
+
+@Client.on_callback_query(filters.regex("cbsudo"))
+async def cbsudo(_, query: CallbackQuery):
+    ###############################################################################################
+    if not query.from_user.id == query.message.reply_to_message.from_user.id:
+            return await query.answer("يا ملقوف الاوامر مو لك وخر !", show_alert=True)
+    ###############################################################################################    
+    await query.edit_message_text(
+        f"""**اوامر المطوريين**
+» /rmw - تنظيف جميع ملفات الخادم
+» /rmd - تنظيف جميع ملفات التنزيلات
+» /sysinfo - عرض معلومات الاخادم
+» /update - تحديث البوت الى اخر اصدار
+» /restart - اعادة تشغيل البوت
+» /leaveall - طلب من الحساب المساعد المغادره من كل المجموعات
+༄ مطور البوت - @{OWNER_NAME}
+ملاحظه الاوامر هاذي للناس الي حطهم مطور البوت مطورين فقط !! -""",
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton("✯ رجوع ✯", callback_data="cbcmds")]]
         ),
     )
 
 
-@Client.on_callback_query(filters.regex("stream_menu_panel"))
-@check_blacklist()
-async def at_set_markup_menu(_, query: CallbackQuery):
-    user_id = query.from_user.id
+@Client.on_callback_query(filters.regex("cbmenu"))
+async def cbmenu(_, query: CallbackQuery):
+    if query.message.sender_chat:
+        return await query.answer("you're an Anonymous Admin !\n\n» revert back to user account from admin rights.")
     a = await _.get_chat_member(query.message.chat.id, query.from_user.id)
     if not a.can_manage_voice_chats:
-        return await query.answer("💡 وخر ايدك لاتبعبص محد يكدر يدوس هنا بس الي عنده صلاحية المكالمات !", show_alert=True)
+        return await query.answer("يا ملقوف الاوامر مو لك وخر !", show_alert=True)
     chat_id = query.message.chat.id
-    user_id = query.message.from_user.id
-    buttons = menu_markup(user_id)
     if chat_id in QUEUE:
-        await query.answer("تم فتح لوحة التحكم 👍🏻")
-        await query.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(buttons))
+          await query.edit_message_text(
+              f"اهلين عزيزي\n- هاذي لوحة التحكم الخاصه بالمكالمة",
+              reply_markup=InlineKeyboardMarkup(
+                  [[
+                      InlineKeyboardButton("ايقاف", callback_data="cbstop"),
+                      InlineKeyboardButton("ايقاف مؤقت", callback_data="cbpause"),
+                      InlineKeyboardButton("استئناف", callback_data="cbresume"),
+                  ],[
+                      InlineKeyboardButton("كتم الصوت", callback_data="cbmute"),
+                      InlineKeyboardButton("الغاء الكتم", callback_data="cbunmute"),
+                  ],[
+                      InlineKeyboardButton("اغلاق القائمة", callback_data="cls")],
+                  ]
+             ),
+         )
     else:
-        await query.answer("معݪش ، ماެفي شي مشتغݪ ياެعيني🌵.", show_alert=True)
+        await query.answer("بدري ؟\nمعد فيه شي شغال عشان تتحكم", show_alert=True)
 
+############################### القديمة
+# @Client.on_callback_query(filters.regex("cls"))
+# async def close(_, query: CallbackQuery):
+#     a = await _.get_chat_member(query.message.chat.id, query.from_user.id)
+#     if not a.can_manage_voice_chats:
+#         return await query.answer("يا حلو بس المشرفين يقدرون يتحكمون !", show_alert=True)
+#     await query.message.delete()
 
-@Client.on_callback_query(filters.regex("stream_home_panel"))
-@check_blacklist()
-async def is_set_home_menu(_, query: CallbackQuery):
-    a = await _.get_chat_member(query.message.chat.id, query.from_user.id)
-    if not a.can_manage_voice_chats:
-        return await query.answer("💡 وخر ايدك لاتبعبص محد يكدر يدوس هنا بس الي عنده صلاحية المكالمات !", show_alert=True)
-    await query.answer("control panel closed")
-    user_id = query.message.from_user.id
-    buttons = stream_markup(user_id)
-    await query.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(buttons))
+#################################  الجديدة
+@Client.on_callback_query(filters.regex("cls"))
+async def close(_, query: CallbackQuery):
 
-
-@Client.on_callback_query(filters.regex("set_close"))
-@check_blacklist()
-async def on_close_menu(_, query: CallbackQuery):
-    a = await _.get_chat_member(query.message.chat.id, query.from_user.id)
-    if not a.can_manage_voice_chats:
-        return await query.answer("💡 وخر ايدك لاتبعبص محد يكدر يدوس هنا بس الي عنده صلاحية المكالمات !", show_alert=True)
-    await query.message.delete()
-
-
-@Client.on_callback_query(filters.regex("close_panel"))
-@check_blacklist()
-async def in_close_panel(_, query: CallbackQuery):
+    ###############################################################################################
+    if not query.from_user.id == query.message.reply_to_message.from_user.id:
+            return await query.answer("يا ملقوف الاوامر مو لك وخر !", show_alert=True)
+    ###############################################################################################    
     await query.message.delete()
