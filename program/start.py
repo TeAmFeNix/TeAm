@@ -58,7 +58,7 @@ async def _human_time_duration(seconds):
 
 @Client.on_message(command(["start", f"start@MusicTxnBot"]) & filters.private & ~filters.edited)
 async def start_(client: Client, message: Message):
-        await message.reply_photo("https://te.legra.ph/file/fa9654c0e092f475d08fa.jpg", caption=f"""✯ **✯ هلا يبعد عيني .**\n
+        await message.reply_photo("https://te.legra.ph/file/3c150d554b8ac948b4f78.jpg", caption=f"""✯ **✯ هلا يبعد عيني .**\n
  **✯ في بوت تشغيل الاغاني المميز الاول في السرعة .** 
 
 ✯ **✯ اضغط على مفتاح الأوامر لرؤية الأوامر .*
@@ -76,19 +76,11 @@ async def start_(client: Client, message: Message):
                     [InlineKeyboardButton("✯ تفعيل البوت ✯", callback_data="cbhowtouse"),
                     
                         InlineKeyboardButton("✯ اوامر البوت ✯", callback_data="cbcmds"),
-                        InlineKeyboardButton("✯ مطور البوت ✯", url=f"https://t.me/{OWNER_NAME}"),
+                        
+                          )
                     ],
-                    [
-                        InlineKeyboardButton(
-                            "✯ قناة السورس ✯", url=f"https://t.me/Mus_3b2"
-                        ),
-                        InlineKeyboardButton(
-                            
-                        ),
+                        InlineKeyboardButton("✯ المطور ✯", url=f"https://t.me/{OWNER_NAME}"),
                     ],
-                    [
-                        InlineKeyboardButton(
-                            
                         )
                     ],
                 ]
@@ -155,7 +147,7 @@ async def ccx_(client: Client, message: Message):
     
 @Client.on_message(filters.command("السورس", [".", ""]) & ~filters.edited)
 async def star_(client: Client, message: Message):
-    await message.reply_photo("https://te.legra.ph/file/1d5b44ab1e2ec79875ee1.jpg", caption=f"""TeAm FeNix .\n\n▹￤ لصنع مثل هذا البوت تواصل مع مطور السورس\n\n▹￤[قناة السورس](t.me/Mus_3b2)\n▹￤[تحديثات السورس](t.me/Mus_3b2)\n▹￤[مطور السورس](t.me/iPiiii)\n▹￤[مبرمج السورس](t.me/iPiiii)**""", 
+    await message.reply_photo("https://te.legra.ph/file/4c95ebb3da0001f068007.jpg", caption=f"""TeAm FeNix .\n\n▹￤ لصنع مثل هذا البوت تواصل مع مطور السورس\n\n▹￤[قناة السورس](t.me/Mus_3b2)\n▹￤[تحديثات السورس](t.me/Mus_3b2)\n▹￤[مطور السورس](t.me/iPiiii)\n▹￤[مبرمج السورس](t.me/iPiiii)**""", 
         reply_markup=InlineKeyboardMarkup(
             [
                 [
