@@ -30,7 +30,7 @@ async def cbstart(_, query: CallbackQuery):
                             url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                       
 
-                     (,
+                     
                     [InlineKeyboardButton("✯ تفعيل البوت ✯", callback_data="cbhowtouse"),
                     
                         InlineKeyboardButton("✯ اوامر البوت ✯", callback_data="cbcmds"),
