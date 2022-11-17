@@ -88,7 +88,7 @@ async def skipp(client, m: Message):
             await m.reply(OP)
             
             
-@Client.on_message(filters.command("ريلا الي بعده", [".", ""]) & ~filters.edited)
+@Client.on_message(filters.command("نفلكس الي بعدها", [".", ""]) & ~filters.edited)
 @authorized_users_only
 async def skip(client, m: Message):
 
@@ -139,7 +139,7 @@ async def skip(client, m: Message):
 
 
 
-@Client.on_message(filters.command("ريلا طفيها", [".", ""]) & ~filters.edited)
+@Client.on_message(filters.command("نفلكس طفيها", [".", ""]) & ~filters.edited)
 @authorized_users_only
 async def stopp(client, m: Message):
     chat_id = m.chat.id
