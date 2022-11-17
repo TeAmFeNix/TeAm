@@ -59,30 +59,7 @@ async def _human_time_duration(seconds):
 @Client.on_message(command(["start", f"start@MusicTxnBot"]) & filters.private & ~filters.edited)
 async def start_(client: Client, message: Message):
         await message.reply_photo("https://te.legra.ph/file/fa9654c0e092f475d08fa.jpg", caption=f"""✯ **✯ هلا يبعد عيني .**\n
- **✯ في بوت تشغيل الاغاني المميز الاول في السرعة .** 
-
- **✯ اضغط على مفتاح الأوامر لرؤية الأوامر .*
- **اضغط على الاوامر في الاسفل \n✯للستفسار ارسل رسالة هنا : @iPiiii**
-**—  —  —  —  —  —  —  —  —  —**
-""", 
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(
-                            "✯ اضفني الى مجموعتك ✯",
-                            url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
-                        )
-                    ],
-                    [InlineKeyboardButton("✯ تفعيل البوت ✯", callback_data="cbhowtouse"),
-                    
-                        InlineKeyboardButton("✯ اوامر البوت ✯", callback_data="cbcmds"),
-                        InlineKeyboardButton("✯ مطور البوت ✯", url=f"https://t.me/{OWNER_NAME}"),
-                    ],
-                       [
-                    ],
-                ]
-            ),
-        )
+ 
 
 
 @Client.on_message(command(["بوت", f"help@MusicTxnBot"]) & filters.group & ~filters.edited)
