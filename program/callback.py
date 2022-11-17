@@ -39,7 +39,7 @@ async def cbstart(_, query: CallbackQuery):
                     ],
                         InlineKeyboardButton("✯ مطور البوت ✯", url=f"https://t.me/{OWNER_NAME}"),
                     ],
-                        )
+                       [
                     ],
                 ]
             ),
