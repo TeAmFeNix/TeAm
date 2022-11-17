@@ -58,30 +58,32 @@ async def _human_time_duration(seconds):
 
 @Client.on_message(command(["start", f"start@MusicTxnBot"]) & filters.private & ~filters.edited)
 async def start_(client: Client, message: Message):
-        await message.reply_photo("https://te.legra.ph/file/76a5f7db1592ef41b6243.jpg", caption=f"""▪️ **↯︙هلا يبعد عيني .**\n
-▫️ **  ↯︙في بوت تشغيل الاغاني المميز الاول في السرعة .** 
+        await message.reply_photo("https://te.legra.ph/file/fa9654c0e092f475d08fa.jpg", caption=f"""✯ **✯ هلا يبعد عيني .**\n
+ **✯ في بوت تشغيل الاغاني المميز الاول في السرعة .** 
 
-↯︙اضغط على مفتاح الاعدادات لرؤية الأوامر .
+✯ **✯ اضغط على مفتاح الأوامر لرؤية الأوامر .*
+ **اضغط على الاوامر في الاسفل \n✯للستفسار ارسل رسالة هنا : @iPiiii**
+**—  —  —  —  —  —  —  —  —  —**
 """, 
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            "‹ اضفني الى مجموعتك ›",
+                            "✯ اضفني الى مجموعتك ✯",
                             url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                         )
                     ],
-                    [InlineKeyboardButton("‹ تفعيل البوت ›", callback_data="cbhowtouse"),
+                    [InlineKeyboardButton("✯ تفعيل البوت ✯", callback_data="cbhowtouse"),
                     
-                        InlineKeyboardButton("‹ اوامر البوت ›", callback_data="cbcmds"),
-                        InlineKeyboardButton("‹ مطور البوت ›", url=f"https://t.me/{OWNER_NAME}"),
+                        InlineKeyboardButton("✯ اوامر البوت ✯", callback_data="cbcmds"),
+                        InlineKeyboardButton("✯ مطور البوت ✯", url=f"https://t.me/{OWNER_NAME}"),
                     ],
                     [
                         InlineKeyboardButton(
-                            "‹ قناة السورس ›", url=f"https://t.me/Mus_3b2"
+                            "✯ قناة السورس ✯", url=f"https://t.me/Mus_3b2"
                         ),
                         InlineKeyboardButton(
-                            "‹ شروحات البوت ›", url=f"https://t.me/{UPDATES_CHANNEL}"
+                            
                         ),
                     ],
                     [
@@ -97,7 +99,7 @@ async def start_(client: Client, message: Message):
 @Client.on_message(command(["بوت", f"help@MusicTxnBot"]) & filters.group & ~filters.edited)
 async def cmd_(client: Client, message: Message):
     await message.reply_text(
-        f"""**▪️ اهلين عيني {message.from_user.mention()}\n▪️ اسمي القميل نفلكس**""",
+        f"""**✯ اهلين عيني {message.from_user.mention()}\n✯ اسمي القميل نفلكس**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -108,14 +110,14 @@ async def cmd_(client: Client, message: Message):
                 ],
                 [InlineKeyboardButton("", callback_data="cbhowtouse")],
                 [
-                    InlineKeyboardButton("‹ اوامر البوت ›", callback_data="ck"),
+                    InlineKeyboardButton("✯ اوامر البوت ✯", callback_data="ck"),
                     InlineKeyboardButton("", url=f"https://t.me/{OWNER_NAME}"),
                 ],
                 [
-                    InlineKeyboardButton("‹ قناة السورس ›", url=f"https://t.me/Mus_3b2"),
-                    InlineKeyboardButton("‹ شروحات البوت ›", url=f"https://t.me/{UPDATES_CHANNEL}"),
+                    InlineKeyboardButton("✯ قناة السورس ✯", url=f"https://t.me/Mus_3b2"),
+                    
                 ],
-                [InlineKeyboardButton("‹ اضفني الى مجموعتك ›", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
+                [InlineKeyboardButton("✯ اضفني الى مجموعتك ✯", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
             ]
         ),
         disable_web_page_preview=True,
@@ -136,14 +138,14 @@ async def ccx_(client: Client, message: Message):
                 ],
                 [InlineKeyboardButton("", callback_data="cbhowtouse")],
                 [
-                    InlineKeyboardButton("‹ اوامر البوت ›", callback_data="ck"),
+                    InlineKeyboardButton("✯ اوامر البوت ✯", callback_data="ck"),
                     InlineKeyboardButton("", url=f"https://t.me/{OWNER_NAME}"),
                 ],
                 [
-                    InlineKeyboardButton("‹ قناة السورس ›", url=f"https://t.me/Mus_3b2"),
-                    InlineKeyboardButton("‹ شروحات البوت ›", url=f"https://t.me/{UPDATES_CHANNEL}"),
+                    InlineKeyboardButton("✯ قناة السورس ✯", url=f"https://t.me/Mus_3b2"),
+                    
                 ],
-                [InlineKeyboardButton("‹ اضفني الى مجموعتك ›", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
+                [InlineKeyboardButton("✯ اضفني الى مجموعتك ✯", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
             ]
         ),
         disable_web_page_preview=True,
@@ -153,7 +155,7 @@ async def ccx_(client: Client, message: Message):
     
 @Client.on_message(filters.command("السورس", [".", ""]) & ~filters.edited)
 async def star_(client: Client, message: Message):
-    await message.reply_photo("https://te.legra.ph/file/fa9654c0e092f475d08fa.jpg", caption=f"""MisTiri .\n\n▹￤ لصنع مثل هذا البوت تواصل مع مطور السورس\n\n▹￤[قناة السورس](t.me/Mus_3b2)\n▹￤[تحديثات السورس](t.me/Mus_3b2)\n▹￤[مطور السورس](t.me/ipiiii)\n▹￤[مبرمج السورس](t.me/ipiiii)**""", 
+    await message.reply_photo("https://te.legra.ph/file/1d5b44ab1e2ec79875ee1.jpg", caption=f"""TeAm FeNix .\n\n▹￤ لصنع مثل هذا البوت تواصل مع مطور السورس\n\n▹￤[قناة السورس](t.me/Mus_3b2)\n▹￤[تحديثات السورس](t.me/Mus_3b2)\n▹￤[مطور السورس](t.me/iPiiii)\n▹￤[مبرمج السورس](t.me/iPiiii)**""", 
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -162,22 +164,22 @@ async def star_(client: Client, message: Message):
                             url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                     )
                 ],
-                [   InlineKeyboardButton("‹ قناة السورس ›", url="https://t.me/Mus_3b2"),
+                [   InlineKeyboardButton("✯ قناة السورس ✯", url="https://t.me/Mus_3b2"),
                 
                     InlineKeyboardButton("", callback_data="cbcmds"),
-                    InlineKeyboardButton("‹ شروحات البوت ›", url=f"https://t.me/{UPDATES_CHANNEL}"),
+                    
                 ],
                 [
                     InlineKeyboardButton(
-                        "‹ مطور البوت ›", url=f"https://t.me/{OWNER_NAME}"
+                        "✯ مطور البوت ✯", url=f"https://t.me/{OWNER_NAME}"
                     ),
                     InlineKeyboardButton(
-                        "‹ شراء بوت ›", url=f"https://t.me/ipiiii"
+                        
                     ),
                 ],
                 [
                     InlineKeyboardButton(
-                        "‹ اضفني الى مجموعتك ›", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
+                        "✯ اضفني الى مجموعتك ✯", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
                     )
                 ],
             ]
@@ -186,7 +188,7 @@ async def star_(client: Client, message: Message):
 
 @Client.on_message(filters.command("المطور", [".", ""]) & ~filters.edited)
 async def mtor_(client: Client, message: Message):
-    await message.reply_photo("https://te.legra.ph/file/fa9654c0e092f475d08fa.jpg", caption=f"""▹￤D𝐞𝐯 N𝐞𝐦𝐚 ↬ X : FeNix\n▹￤D𝐞𝐯 U𝐬𝐞𝐫 ↬ @ipiiii\n▹￤D𝐞𝐯 I𝐝 ↬ ( 5186954055 )\n▹￤D𝐞𝐯 B𝐢𝐨  ..! @ipiiii**""", 
+    await message.reply_photo("https://te.legra.ph/file/6f71d6ddcf24d96c0506b.jpg", caption=f"""▹￤D𝐞𝐯 N𝐞𝐦𝐚 ↬ X : فنكس\n▹￤D𝐞𝐯 U𝐬𝐞𝐫 ↬ @iPiiii\n▹￤D𝐞𝐯 I𝐝 ↬ ( 5186954055 )\n▹￤D𝐞𝐯 B𝐢𝐨  ..! @iPiiii**""", 
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -195,28 +197,28 @@ async def mtor_(client: Client, message: Message):
                             url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                     )
                 ],
-                [   InlineKeyboardButton("‹ مطور البوت ›", url=f"https://t.me/{OWNER_NAME}"),
+                [   InlineKeyboardButton("✯ مطور البوت ✯", url=f"https://t.me/{OWNER_NAME}"),
                 
                     InlineKeyboardButton("", callback_data="cbcmds"),
                     InlineKeyboardButton("", url=f"https://t.me/Mus_3b2"),
                 ],
                 [
                     InlineKeyboardButton(
-                        "‹ شراء بوت ›", url=f"https://t.me/ipiiii"
+                        
                     ),
                     InlineKeyboardButton(
-                        "", url=f"https://t.me/ipiiii"
+                        "", url=f"https://t.me/iPiiii"
                     ),
                 ],
                 [
                     InlineKeyboardButton(
-                        "‹ اضفني الى مجموعتك ›", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
+                        "✯ اضفني الى مجموعتك ✯", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
                     )
                 ],
             ]
         ),
     )
-# @Client.on_message(filters.command("نفلكس", [".", ""]) & ~filters.edited)
+# @Client.on_message(filters.command("ميرا", [".", ""]) & ~filters.edited)
 # async def ivo(client: Client, message: Message):
 # m_reply = await message.reply_text(f"**لبيه {message.from_user.mention()}\n✯ اضغط /help عشان تشوف اوامري**")
 # await m_reply_text("")
@@ -1457,7 +1459,7 @@ def searchMusic(c, m):
         word = random.choice(text)
         m.reply(word)
     except Exception as e:
-        m.reply("حدث خطاء راسل المطور\n- @ipiiii")
+        m.reply("حدث خطاء راسل المطور\n- @iPiiii")
 
 
 @Client.on_message(
@@ -1471,13 +1473,13 @@ async def alive(client: Client, message: Message):
     keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("‹ قناة السورس ›", url=f"https://t.me/Mus_3b2"),
-                InlineKeyboardButton("‹ مطور البوت ›", url=f"https://t.me/ipiiii"),
+                InlineKeyboardButton("✯ قناة السورس ✯", url=f"https://t.me/Mus_3b2"),
+                InlineKeyboardButton("✯ مطور البوت ✯", url=f"https://t.me/iPiiii"),
             ]
         ]
     )
 
-    alive = f"**▪️ اهلا عزيزي {message.from_user.mention()}**\n\n**▪️ شكرا لاضافتكم لبوت نفلكس في حال وجود اي مشكله او استفسار راسل مطور البوت**"
+    alive = f"**✯ اهلا عزيزي {message.from_user.mention()}**\n\n**✯ شكرا لاضافتكم لبوت نفلكس في حال وجود اي مشكله او استفسار راسل مطور البوت**"
 
     await message.reply_photo(
         photo=f"{ALIVE_IMG}",
@@ -1521,7 +1523,7 @@ async def new_chat(c: Client, m: Message):
                     [
                         [
                             InlineKeyboardButton(
-                                "مطور البوت", url=f"https://t.me/ipiiii"
+                                "مطور البوت", url=f"https://t.me/iPiiii"
                             ),
                             InlineKeyboardButton(
                                 "قناة البوت", url=f"https://t.me/{UPDATES_CHANNEL}"
