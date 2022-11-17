@@ -28,7 +28,7 @@ async def cbstart(_, query: CallbackQuery):
                         InlineKeyboardButton(
                             "✯ اضفني الى مجموعتك ✯",
                             url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
-                      (
+                      
 
                     ],
                     [InlineKeyboardButton("✯ تفعيل البوت ✯", callback_data="cbhowtouse"),
