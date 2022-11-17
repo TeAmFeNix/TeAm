@@ -16,39 +16,32 @@ from config import (
 async def cbstart(_, query: CallbackQuery):
     await query.edit_message_text(
        f""" **↯︙هلا يبعد عيني .**\n
- ** ↯︙في بوت تشغيل الاغاني المميز الاول في السرعة .
-**
+✯ في بوت تشغيل الاغاني المميز الاول في السرعة . 
 
- **يمكن اضافتي الى مجموعتك واستخدام الاوامر للتشغيل ❕*
- **اضغط على الاوامر في الاسفل \nللستفسار ارسل رسالة هنا : @ipiiii.**
-**—  —  —  —  —  —  —  —  —  —**""",
-        reply_markup=InlineKeyboardMarkup(
-            [
+✯ **✯ اضغط على مفتاح الأوامر لرؤية الأوامر .*
+ اضغط على الاوامر في الاسفل \n✯للستفسار ارسل رسالة هنا : @iPiiii
+—  —  —  —  —  —  —  —  —  —
+""", 
+            reply_markup=InlineKeyboardMarkup(
                 [
-                    InlineKeyboardButton(
-                        "✯ اضفني الى مجموعتك ✯",
-                        url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
-                    )
-                ],
-                [InlineKeyboardButton("✯ تفعيل البوت ✯", callback_data="cbhowtouse"),
-               
-                    InlineKeyboardButton("✯ اوامر البوت ✯", callback_data="cbcmds"),
-                    InlineKeyboardButton("✯ مطور البوت ✯", url=f"https://t.me/{OWNER_NAME}"),
-                ],
-                [
-                    InlineKeyboardButton(
-                        "✯ قناة السورس ✯", url=f"https://t.me/Mus_3b2"
-                    ),
-                    InlineKeyboardButton(
-                        "✯ شروحات البوت ✯", url=f"https://t.me/{UPDATES_CHANNEL}"
-                    ),
-                ],
-                [
-                    InlineKeyboardButton(
-                       "✯ شراء بوت ✯", url=f"https://t.me/ipiiii"
-                    )
-                ],
-            ]
+                    [
+                        InlineKeyboardButton(
+                            "✯ اضفني الى مجموعتك ✯",
+                            url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
+                        )
+                    ],
+                    [InlineKeyboardButton("✯ تفعيل البوت ✯", callback_data="cbhowtouse"),
+                    
+                        InlineKeyboardButton("✯ اوامر البوت ✯", callback_data="cbcmds"),
+                        
+                          )
+                    ],
+                        InlineKeyboardButton("✯ مطور البوت ✯", url=f"https://t.me/{OWNER_NAME}"),
+                    ],
+                        )
+                    ],
+                ]
+            ),
         ),
         disable_web_page_preview=True,
     )
