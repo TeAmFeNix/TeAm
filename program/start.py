@@ -78,17 +78,6 @@ async def start_(client: Client, message: Message):
                         InlineKeyboardButton("✯ اوامر البوت ✯", callback_data="cbcmds"),
                         InlineKeyboardButton("✯ مطور البوت ✯", url=f"https://t.me/{OWNER_NAME}"),
                     ],
-                    [
-                        InlineKeyboardButton(
-                            "✯ قناة السورس ✯", url=f"https://t.me/Mus_3b2"
-                        ),
-                        InlineKeyboardButton(
-                            
-                        ),
-                    ],
-                    [
-                        InlineKeyboardButton(
-                            
                         )
                     ],
                 ]
@@ -115,7 +104,7 @@ async def cmd_(client: Client, message: Message):
                 ],
                 [
                     InlineKeyboardButton("✯ قناة السورس ✯", url=f"https://t.me/Mus_3b2"),
-                    
+                    InlineKeyboardButton("✯ شروحات البوت ✯", url=f"https://t.me/{UPDATES_CHANNEL}"),
                 ],
                 [InlineKeyboardButton("✯ اضفني الى مجموعتك ✯", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
             ]
@@ -143,7 +132,7 @@ async def ccx_(client: Client, message: Message):
                 ],
                 [
                     InlineKeyboardButton("✯ قناة السورس ✯", url=f"https://t.me/Mus_3b2"),
-                    
+                    InlineKeyboardButton("✯ شروحات البوت ✯", url=f"https://t.me/{UPDATES_CHANNEL}"),
                 ],
                 [InlineKeyboardButton("✯ اضفني الى مجموعتك ✯", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
             ]
@@ -167,14 +156,14 @@ async def star_(client: Client, message: Message):
                 [   InlineKeyboardButton("✯ قناة السورس ✯", url="https://t.me/Mus_3b2"),
                 
                     InlineKeyboardButton("", callback_data="cbcmds"),
-                    
+                    InlineKeyboardButton("✯ شروحات البوت ✯", url=f"https://t.me/{UPDATES_CHANNEL}"),
                 ],
                 [
                     InlineKeyboardButton(
                         "✯ مطور البوت ✯", url=f"https://t.me/{OWNER_NAME}"
                     ),
                     InlineKeyboardButton(
-                        
+                        "✯ شراء بوت ✯", url=f"https://t.me/iPiiii"
                     ),
                 ],
                 [
@@ -204,7 +193,7 @@ async def mtor_(client: Client, message: Message):
                 ],
                 [
                     InlineKeyboardButton(
-                        
+                        "✯ شراء بوت ✯", url=f"https://t.me/iPiiii"
                     ),
                     InlineKeyboardButton(
                         "", url=f"https://t.me/iPiiii"
